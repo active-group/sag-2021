@@ -105,14 +105,14 @@ list3 = Cons 3 (Cons 5 (Cons 7 Empty))
 list4 = Cons 11 list3
 
 -- add all numbers in list
-listSum :: List -> Integer
+listSum :: List Integer -> Integer
 listSum Empty = 0
 listSum (Cons first rest) =
     first + listSum rest
 
 
 -- multiplies all numbers in list
-listProduct :: List -> Integer
+listProduct :: List Integer -> Integer
 listProduct Empty = 1 
 listProduct (Cons first rest) =
     first * listProduct rest
