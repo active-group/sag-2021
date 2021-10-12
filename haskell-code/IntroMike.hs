@@ -189,3 +189,7 @@ instance Semigroup Integer where
 
 instance Semigroup (Endo a) where
     op = combineEndo
+
+instance Semigroup (List a) where
+    op = append
+
