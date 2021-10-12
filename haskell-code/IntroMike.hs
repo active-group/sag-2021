@@ -269,3 +269,9 @@ data Contract =
   | Multiple Double Contract -- <- self-reference
   | WithMaturity Date Contract
   deriving Show
+
+zcb1 = WithMaturity (Date "2021-12-24") (Multiple 100 (OneOf GBP))
+
+zeroCouponBond :: Date -> Double -> Currency -> Contract
+zeroCouponBond maturity amount currency =
+    WithMaturity maturity (Multiple amount (OneOf currency))
