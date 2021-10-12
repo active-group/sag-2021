@@ -95,4 +95,4 @@ mycurry f = \ a -> \ b -> f (a, b)
 --                                                        ^^^^ self-reference
 data List =
     Empty
- 
+  | Cons Integer List
