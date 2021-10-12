@@ -96,3 +96,4 @@ mycurry f = \ a -> \ b -> f (a, b)
 data List =
     Empty
   | Cons Integer List
+  deriving Show
