@@ -67,4 +67,5 @@ runOverAnimal (Parrot sentence weight) = Parrot "" weight
 
 -- feed animal
 
-feedAnimal amount (Dillo liveness weight) = Dillo liveness (weight + amount)
+feedAnimal amount (Dillo Alive weight) = Dillo Alive (weight + amount)
+
