@@ -14,3 +14,9 @@ x = 12
 data Liveness = Dead | Alive
   deriving Show -- makes Liveness printable
 -- data: new datatype, | = or
+
+type Weight = Integer 
+-- type synonym
+
+data Animal = Dillo Liveness Weight
+  deriving Show
