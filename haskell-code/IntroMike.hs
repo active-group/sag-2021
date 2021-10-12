@@ -117,6 +117,10 @@ listProduct Empty = 1
 listProduct (Cons first rest) =
     first * listProduct rest
 
+-- associativity
+-- (a + b) + c = a + (b + c)
+-- (a * b) * c = a * (b * c)
+
 -- 0 is the identity / neutral element of +
 -- 0 + x = x + 0 = x
 -- 1 is the identity / neutral element of *
@@ -144,11 +148,13 @@ h Alive = Dead
 identity :: p -> p
 identity x = x
 
+-- combineEndo a (combineEndo b c) = combineEnde (combineEndo a b) c
 combineEndo :: Endo a -> Endo a -> Endo a
 combineEndo f g = \ x -> g (f x)
 
 -- append two lists
 -- neutral element: Empty
+-- append a (append b c) = append (append a b) c
 append :: List a -> List a -> List a
 append Empty list2 = list2
 
@@ -158,3 +164,11 @@ append (Cons first rest) list2 =
     -- first = 1
     -- append rest list2 = append (Cons 2 (Cons 3 Empty)) list2 = 2 3 4 5 6
     Cons first (append rest list2)
+
+
+-- ingredients:
+-- set / type t
+-- binary operation / combinator 
+-- op :: t -> t -> t
+-- associativity: op a (op b c) = op (op a b) c
+-- 
