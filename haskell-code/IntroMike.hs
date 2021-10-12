@@ -107,6 +107,14 @@ list2 = Cons 5 (Cons 7 Empty)
 list3 = Cons 3 (Cons 5 (Cons 7 Empty))
 list4 = Cons 11 list3
 
+highway :: List Animal
+highway = Cons dillo1 (Cons dillo2 (Cons parrot1 (Cons parrot2 Empty)))
+
+runOverAnimals :: List Animal -> List Animal
+runOverAnimals Empty = Empty
+runOverAnimals (Cons first rest) =
+    Cons (runOverAnimal first) (runOverAnimals rest)
+
 -- add all numbers in list
 listSum :: List Integer -> Integer
 listSum Empty = 0
