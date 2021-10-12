@@ -307,3 +307,16 @@ zcb1' = zeroCouponBond (Date "2021-12-24") 100 GBP
 
 cswap1 :: Contract
 cswap1 = Both zcb1 zcb2
+
+-- What does a contract mean?
+-- semantics
+-- in this case: what payments are effected by a contract?
+
+data Direction = Long | Short
+  deriving Show
+
+data Payment = Payment Date Direction  Double Currency
+  deriving Show
+
+contractPayments :: Contract -> List Payment
+
