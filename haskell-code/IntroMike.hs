@@ -264,6 +264,9 @@ zcb1 = ZeroCouponBond (Date "2021-12-24") 100 GBP
 -- - with maturity / "later"
 -- - currency
 -- - multiple ...
+
+-- - ask for more examples
+
 data Contract =
     -- "receive One EUR NOW"
     OneOf Currency
@@ -279,6 +282,13 @@ zeroCouponBond :: Date -> Double -> Currency -> Contract
 zeroCouponBond maturity amount currency =
     WithMaturity maturity (Multiple amount (OneOf currency))
 
+-- "smart constructor"
+withMaturity :: Date -> Contract -> Contract
+withMaturity date1 (WithMaturity date2 contract) =
+    WithMaturity (max date1 date2) contract
+withMaturity date contract = WithMaturity date contract
+
 
 zcb1' :: Contract
 zcb1' = zeroCouponBond (Date "2021-12-24") 100 GBP
+
