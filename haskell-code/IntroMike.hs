@@ -318,5 +318,9 @@ data Direction = Long | Short
 data Payment = Payment Date Direction  Double Currency
   deriving Show
 
-contractPayments :: Contract -> List Payment
+-- payments up to that date, produces residual contract from that date
+contractPayments :: Date -> Contract -> (List Payment, Contract)
+contractPayments now Zero = (Empty, Zero)
+contractPayments now (OneOf currency) = 
+    (Cons (Payment now Long 1 currency) Empty, Zero)
 
