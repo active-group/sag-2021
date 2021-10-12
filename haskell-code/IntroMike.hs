@@ -193,3 +193,14 @@ instance Semigroup (Endo a) where
 instance Semigroup (List a) where
     op = append
 
+class Semigroup t => Monoid t where
+    neutral :: t
+
+instance Monoid Integer where
+    neutral = 0
+
+instance Monoid (Endo a) where
+    neutral = identity
+
+instance Monoid (List a) where
+    neutral = Empty
