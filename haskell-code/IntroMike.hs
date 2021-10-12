@@ -105,6 +105,6 @@ list3 = Cons 3 (Cons 5 (Cons 7 Empty))
 list4 = Cons 11 list3
 
 -- add all numbers in list
-listSum Empty = 0
+listSum Empty = undefined
 listSum (Cons first rest) =
     first + listSum rest
