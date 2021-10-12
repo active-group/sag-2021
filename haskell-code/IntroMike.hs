@@ -277,8 +277,10 @@ data Contract =
   | Multiple Double Contract -- <- self-reference
   | WithMaturity Date Contract
   | Invert Contract
+  | Both Contract Contract
   deriving Show
 -- | Receive Contract
+--  | ContractList (List Contract)
 
 
 zcb1 :: Contract
