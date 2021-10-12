@@ -271,13 +271,14 @@ zcb1 = ZeroCouponBond (Date "2021-12-24") 100 GBP
 --          Pay     100EUR on Dec 24, 2021
 
 data Contract =
+    Zero -- monoid
     -- "receive One EUR NOW"
-    OneOf Currency
+  | OneOf Currency
     -- "receive 100 EUR NOW"
   | Multiple Double Contract -- <- self-reference
   | WithMaturity Date Contract
   | Invert Contract
-  | Both Contract Contract
+  | Both Contract Contract -- semigroup
   deriving Show
 -- | Receive Contract
 --  | ContractList (List Contract)
@@ -304,4 +305,5 @@ withMaturity date contract = WithMaturity date contract
 zcb1' :: Contract
 zcb1' = zeroCouponBond (Date "2021-12-24") 100 GBP
 
+cswap1 :: Contract
 cswap1 = Both zcb1 zcb2
