@@ -263,6 +263,8 @@ zcb1 = ZeroCouponBond (Date "2021-12-24") 100 GBP
 -- - currency
 -- - multiple ...
 data Contract =
-    -- "receive 1EUR NOW"
-    One Currency
+    -- "receive One EUR NOW"
+    OneOf Currency
+    -- "receive 100 EUR NOW"
+  | Multiple Double Currency
   deriving Show
