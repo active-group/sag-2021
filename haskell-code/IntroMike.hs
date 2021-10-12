@@ -172,3 +172,17 @@ append (Cons first rest) list2 =
 -- op :: t -> t -> t
 -- associativity: op a (op b c) = op (op a b) c
 -- semigroup
+
+-- semigroup + neutral element: monoid
+
+-- class: TYPE CLASS, NOT OO class, more like interface
+class Semigroup t where
+    -- op must be associative
+    op :: t -> t -> t
+
+-- think "implementation"
+instance Semigroup Integer where
+    op = (+)
+
+instance Semigroup (Endo a) where
+    op = combineEndo
