@@ -64,3 +64,7 @@ runOverAnimal :: Animal -> Animal
 -- pattern matching
 runOverAnimal (Dillo l w) = Dillo Dead w
 runOverAnimal (Parrot sentence weight) = Parrot "" weight
+
+-- feed animal
+
+feedAnimal amount (Dillo liveness weight) = Dillo liveness (weight + amount)
