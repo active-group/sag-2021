@@ -63,3 +63,4 @@ class Dillo {
 runOverAnimal :: Animal -> Animal
 -- pattern matching
 runOverAnimal (Dillo l w) = Dillo Dead w
+runOverAnimal (Parrot sentence weight) = Parrot "" weight
