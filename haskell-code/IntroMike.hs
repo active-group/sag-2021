@@ -146,3 +146,13 @@ identity x = x
 
 combineEndo :: Endo a -> Endo a -> Endo a
 combineEndo f g = \ x -> g (f x)
+
+-- append two lists
+append Empty list2 = list2
+
+-- list1 = 1 2 3
+-- list2 = 4 5 6
+append (Cons first rest) list2 =
+    -- first = 1
+    -- append rest list2 = append (Cons 2 (Cons 3 Empty)) list2 = 2 3 4 5 6
+    Cons first (append rest list2)
