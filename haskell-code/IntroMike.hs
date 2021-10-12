@@ -129,3 +129,20 @@ type Endo a = a -> a
 
 g :: Endo Integer
 g x = x + 1
+
+h :: Endo Liveness
+h Dead = Alive
+h Alive = Dead
+
+-- + :: Integer -> Integer -> Integer
+-- * :: Integer -> Integer -> Integer
+
+-- geometric function :: R2 -> R2 = Endo R2
+ 
+-- neutral element wrt. combineEndo: identity function
+
+identity :: p -> p
+identity x = x
+
+combineEndo :: Endo a -> Endo a -> Endo a
+combineEndo f g = \ x -> g (f x)
