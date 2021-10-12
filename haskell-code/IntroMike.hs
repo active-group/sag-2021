@@ -118,7 +118,14 @@ runOverAnimals (Cons first rest) =
 feedAnimals1 :: List Animal -> List Animal
 feedAnimals1 Empty = Empty
 feedAnimals1 (Cons first rest) =
-    Cons (feedAnimal 1 first) (feedAnimals1 rest)
+    Cons ((feedAnimal 1) first) (feedAnimals1 rest)
+
+-- (algebraic structure: functor)
+
+listMap :: (a -> b) -> List a -> List b
+listMap process Empty = Empty
+listMap process (Cons first rest) =
+  Cons (process first) (listMap process rest)
 
 -- add all numbers in list
 listSum :: List Integer -> Integer
