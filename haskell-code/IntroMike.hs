@@ -20,3 +20,10 @@ type Weight = Integer
 
 data Animal = Dillo Liveness Weight
   deriving Show
+
+-- 
+dillo1 :: Animal
+dillo1 = Dillo Alive 10
+
+dillo2 :: Animal
+dillo2 = Dillo Dead 12
