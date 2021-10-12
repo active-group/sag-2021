@@ -124,3 +124,5 @@ listProduct (Cons first rest) =
 
 -- group theory
 -- geometry?
+
+type Endo a = a -> a
