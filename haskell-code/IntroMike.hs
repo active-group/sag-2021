@@ -171,4 +171,4 @@ append (Cons first rest) list2 =
 -- binary operation / combinator 
 -- op :: t -> t -> t
 -- associativity: op a (op b c) = op (op a b) c
--- 
+-- semigroup
