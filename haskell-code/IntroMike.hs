@@ -88,3 +88,11 @@ feedAnimal' (amount, Parrot sentence weight) = Parrot sentence (weight + amount)
 mycurry :: ((a, b) -> c) -> (a -> b -> c)
 -- mycurry f = \ weight -> \ animal -> f (weight, animal)
 mycurry f = \ a -> \ b -> f (a, b)
+
+-- List is one of the following:
+-- - the empty list
+-- - a cons list consisting of first element and the rest list
+--                                                        ^^^^ self-reference
+data List =
+    Empty
+ 
