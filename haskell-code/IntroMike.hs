@@ -116,3 +116,11 @@ listProduct :: List -> Integer
 listProduct Empty = 1 
 listProduct (Cons first rest) =
     first * listProduct rest
+
+-- 0 is the identity / neutral element of +
+-- 0 + x = x + 0 = x
+-- 1 is the identity / neutral element of *
+-- 1 * x = x * 1 = x
+
+-- group theory
+-- geometry?
