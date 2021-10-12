@@ -266,5 +266,6 @@ data Contract =
     -- "receive One EUR NOW"
     OneOf Currency
     -- "receive 100 EUR NOW"
-  | Multiple Double Currency
+  | Multiple Double Contract -- <- self-reference
+  | WithMaturity Date Contract
   deriving Show
