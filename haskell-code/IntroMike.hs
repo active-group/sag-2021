@@ -84,5 +84,7 @@ feedAnimal' (amount, Dillo Alive weight) = Dillo Alive (weight + amount)
 feedAnimal' (amount, Dillo Dead weight) = Dillo Dead weight
 feedAnimal' (amount, Parrot sentence weight) = Parrot sentence (weight + amount)
 
-mycurry :: ((Weight, Animal) -> Animal) -> (Weight -> Animal -> Animal)
-mycurry f = \ weight -> \ animal -> f (weight, animal)
+-- mycurry :: ((Weight, Animal) -> Animal) -> (Weight -> Animal -> Animal)
+mycurry :: ((a, b) -> c) -> (a -> b -> c)
+-- mycurry f = \ weight -> \ animal -> f (weight, animal)
+mycurry f = \ a -> \ b -> f (a, b)
