@@ -113,6 +113,6 @@ listSum (Cons first rest) =
 
 -- multiplies all numbers in list
 listProduct :: List -> Integer
-listProduct Empty = 0 
+listProduct Empty = 1 
 listProduct (Cons first rest) =
     first * listProduct rest
