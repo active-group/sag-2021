@@ -45,4 +45,4 @@ class Dillo {
 -- run over an animal
 runOverAnimal :: Animal -> Animal
 -- pattern matching
-runOverAnimal (Dillo l w) = 
+runOverAnimal (Dillo l w) = Dillo Dead w
