@@ -266,6 +266,9 @@ zcb1 = ZeroCouponBond (Date "2021-12-24") 100 GBP
 -- - multiple ...
 
 -- - ask for more examples
+-- currency swap
+-- Both of: Receive 100GBP on Dec 24, 2021
+--          Pay     100EUR on Dec 24, 2021
 
 data Contract =
     -- "receive One EUR NOW"
@@ -280,7 +283,7 @@ zcb1 = WithMaturity (Date "2021-12-24") (Multiple 100 (OneOf GBP))
 
 zeroCouponBond :: Date -> Double -> Currency -> Contract
 zeroCouponBond maturity amount currency =
-    WithMaturity maturity (Multiple amount (OneOf currency))
+    withMaturity maturity (Multiple amount (OneOf currency))
 
 -- "smart constructor"
 withMaturity :: Date -> Contract -> Contract
