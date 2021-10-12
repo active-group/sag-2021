@@ -224,3 +224,45 @@ instance Monoid (Endo a) where
 
 instance Monoid (List a) where
     neutral = Empty
+
+
+-- How to create a domain model?
+
+-- - ask domain expert for simple examples
+-- Karthik: bond with maturity, payment after some time
+-- Zero-Coupon Bond
+-- "Receive 100GBP on Dec 24, 2021"
+
+data Currency = GBP | EUR 
+  deriving Show
+
+data Date = Date String
+  deriving (Show, Ord, Eq)
+
+{-
+data Contract =
+    ZeroCouponBond Date Double Currency 
+  | Future
+  | CurrencySwap
+  | AnnuityProduct
+  | Everest
+  | K2
+
+-- code needs to be added on each new product
+-- - lots of work
+-- - bugs
+-- - takes time
+
+zcb1 = ZeroCouponBond (Date "2021-12-24") 100 GBP
+
+-}
+
+-- smash simple example into separate "atomic" ideas
+-- "Receive 100GBP on Dec 24, 2021"
+-- - with maturity / "later"
+-- - currency
+-- - multiple ...
+data Contract =
+    -- "receive 1EUR NOW"
+    One Currency
+  deriving Show
