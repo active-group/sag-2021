@@ -276,7 +276,7 @@ data Contract =
     -- "receive 100 EUR NOW"
   | Multiple Double Contract -- <- self-reference
   | WithMaturity Date Contract
-  | Pay Contract
+  | Invert Contract
   deriving Show
 -- | Receive Contract
 
@@ -287,6 +287,10 @@ zcb1 = WithMaturity (Date "2021-12-24") (Multiple 100 (OneOf GBP))
 zeroCouponBond :: Date -> Double -> Currency -> Contract
 zeroCouponBond maturity amount currency =
     withMaturity maturity (Multiple amount (OneOf currency))
+
+-- "pay 100EUR on 2021-12-24"
+zcb2 :: Contract
+zcb2 = Invert (zeroCouponBond (Date "2021-12-24") 100 EUR)
 
 -- "smart constructor"
 withMaturity :: Date -> Contract -> Contract
