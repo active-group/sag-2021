@@ -97,3 +97,11 @@ data List =
     Empty
   | Cons Integer List
   deriving Show
+
+-- 2-element list: 5 7
+list2 = Cons 5 (Cons 7 Empty)
+-- 3-element list: 3 5 7
+list3 = Cons 3 (Cons 5 (Cons 7 Empty))
+list4 = Cons 11 list3
+
+--
