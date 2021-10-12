@@ -33,12 +33,21 @@ data Animal =
   | Parrot String Weight
   deriving Show
 
--- 
+-- live armadillo, 10kg
 dillo1 :: Animal
 dillo1 = Dillo Alive 10
 
+-- dead armadillo, 12kg
 dillo2 :: Animal
 dillo2 = Dillo Dead 12
+
+-- welcome parrot, 1kg
+parrot1 :: Animal
+parrot1 = Parrot "Hello!" 1
+
+parrot2 :: Animal
+parrot2 = Parrot "Bye!" 2
+
 
 {-
 class Dillo {
