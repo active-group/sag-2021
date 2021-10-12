@@ -276,7 +276,10 @@ data Contract =
     -- "receive 100 EUR NOW"
   | Multiple Double Contract -- <- self-reference
   | WithMaturity Date Contract
+  | Pay Contract
   deriving Show
+-- | Receive Contract
+
 
 zcb1 :: Contract
 zcb1 = WithMaturity (Date "2021-12-24") (Multiple 100 (OneOf GBP))
