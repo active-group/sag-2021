@@ -8,11 +8,17 @@ x = 12
 f :: Integer -> Integer
 f x = x + 5
 
--- Animals on the Texas highway
+-- Animal on the Texas highway is one of the following:
+-- - armadillo - OR -
+-- - parrot
 
 -- Armadillo has the following properties:
 -- - dead or alive - AND -
 -- - weight 
+
+-- Parrot has the following properties:
+-- - sentence
+-- - weight
 
 data Liveness = Dead | Alive
   deriving Show -- makes Liveness printable
@@ -22,7 +28,9 @@ type Weight = Integer
 -- type synonym
 
 -- "state of the animal at a certain time"
-data Animal = Dillo Liveness Weight
+data Animal = 
+    Dillo Liveness Weight
+  | Parrot String Weight
   deriving Show
 
 -- 
