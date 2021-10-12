@@ -148,6 +148,7 @@ combineEndo :: Endo a -> Endo a -> Endo a
 combineEndo f g = \ x -> g (f x)
 
 -- append two lists
+-- neutral element: Empty
 append :: List a -> List a -> List a
 append Empty list2 = list2
 
