@@ -93,9 +93,9 @@ mycurry f = \ a -> \ b -> f (a, b)
 -- - the empty list
 -- - a cons list consisting of first element and the rest list
 --                                                        ^^^^ self-reference
-data List =
+data List a =
     Empty
-  | Cons Integer List
+  | Cons a (List a)
   deriving Show
 
 -- 2-element list: 5 7
