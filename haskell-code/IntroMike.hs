@@ -65,8 +65,11 @@ runOverAnimal :: Animal -> Animal
 runOverAnimal (Dillo l w) = Dillo Dead w
 runOverAnimal (Parrot sentence weight) = Parrot "" weight
 
+-- Haskell knows only unary functions
+
 -- feed animal
 
+feedAnimal :: Weight -> (Animal -> Animal)
 feedAnimal amount (Dillo Alive weight) = Dillo Alive (weight + amount)
 feedAnimal amount (Dillo Dead weight) = Dillo Dead weight
 feedAnimal amount (Parrot sentence weight) = Parrot sentence (weight + amount)
