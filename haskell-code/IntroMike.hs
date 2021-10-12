@@ -126,3 +126,6 @@ listProduct (Cons first rest) =
 -- geometry?
 
 type Endo a = a -> a
+
+g :: Endo Integer
+g x = x + 1
