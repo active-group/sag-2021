@@ -5,10 +5,13 @@ import Prelude hiding (Functor, Monad, Monoid, Semigroup)
 x :: Integer
 x = 12
 
+f :: Integer -> Integer
+f x = x + 5
+
 -- Animals on the Texas highway
 
 -- Armadillo has the following properties:
--- - dead or alive
+-- - dead or alive - AND -
 -- - weight 
 
 data Liveness = Dead | Alive
@@ -27,3 +30,6 @@ dillo1 = Dillo Alive 10
 
 dillo2 :: Animal
 dillo2 = Dillo Dead 12
+
+-- run over an animal
+-- runOverAnimal :: Animal -> Animal
