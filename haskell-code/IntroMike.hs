@@ -304,3 +304,4 @@ withMaturity date contract = WithMaturity date contract
 zcb1' :: Contract
 zcb1' = zeroCouponBond (Date "2021-12-24") 100 GBP
 
+cswap1 = Both zcb1 zcb2
