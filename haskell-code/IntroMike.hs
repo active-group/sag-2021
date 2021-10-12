@@ -115,6 +115,11 @@ runOverAnimals Empty = Empty
 runOverAnimals (Cons first rest) =
     Cons (runOverAnimal first) (runOverAnimals rest)
 
+feedAnimals1 :: List Animal -> List Animal
+feedAnimals1 Empty = Empty
+feedAnimals1 (Cons first rest) =
+    Cons (feedAnimal 1 first) (feedAnimals1 rest)
+
 -- add all numbers in list
 listSum :: List Integer -> Integer
 listSum Empty = 0
