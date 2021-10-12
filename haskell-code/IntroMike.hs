@@ -66,6 +66,11 @@ runOverAnimal (Dillo l w) = Dillo Dead w
 runOverAnimal (Parrot sentence weight) = Parrot "" weight
 
 -- Haskell knows only unary functions
+-- "curried functions"
+-- Haskell Curry
+-- Moses Schönfinkel
+-- other such functional languages: F#, OCaml, Elm
+-- not such functional languages: Racket, Scala, Erlang
 
 -- feed animal
 
