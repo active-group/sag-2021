@@ -12,3 +12,5 @@ x = 12
 -- - weight 
 
 data Liveness = Dead | Alive
+  deriving Show
+-- data: new datatype, | = or
